@@ -1,7 +1,17 @@
-
+:root {
+    --Dark-Purple: #0C0032;
+    --Blue: #3500D3;
+    --Grey: #282828;
+    --Darker-Blue: #240090;
+    --light-purple: #190061;
+    --White: hsl(0, 0%, 100%);
+}
 * {
     margin: 0;
     font-family: monospace;
+    color:aliceblue;
+    background-color: black;
+
 }
 /* flex */
 .flex {
@@ -46,53 +56,66 @@
 }
 .link {
     border: 1px solid pink;
-    background-color: greenyellow;
+    background-color: var(--Grey);
 }
 .navbar {
     height: 120px;
     width: 100%;
-    background-color: blue;
+    background-color: var(--Dark-Purple);
 }
+/* lists */
+.list-card li {
+    background-color: var(--Dark-Purple);
+    width: 90%;
+    margin-right: 20px;
+}
+
 /* footer */
 .footer-container {
-    height: 100%;
+    height: 50vh;
+    background-color: var(--Grey);
 }
 .footer {
     height: 80px;
     width:100%;
-    justify-self: end;
+    background-color: var(--Dark-Purple);
+}
+.footer-links a {
+    background-color: var(--Grey);
 }
 /* containers */
+.section {
+    background-color: var(--Dark-Purple);
+}
 .padding {
-    background-color: lightblue;
     width: 40%;
     height: 120px;
 }
 .container {
-    border: 1px solid pink;
+    
     height: 120px;
-    background-color: greenyellow;
+    /* background-color: var(--Grey); */
 }
 .container-10 {
-    border: 1px solid pink;
+    /* background-color: var(--Grey); */
     height: 120px;
-    width: 10%;
+    width: 20%;
 }
-.orange-bg {
-    background-color: lightsalmon;
+.blue {
+    background-color: var(--Blue);
 }
-.green {
-    background-color: greenyellow;
+.darker-blue {
+    background-color: var(--Darker-Blue);
 }
-.yellow {
-    background-color: yellow;
+.light-purple {
+    background-color: var(--light-purple);
+}
+.grey {
+    background-color: var(--Grey);
 }
 .head-shot {
     height: 100px;
     width: 100px;
-    z-index:2;
-    border: 1px solid orange;
-    
 }
 /* spacing */
 .ml-10 {
@@ -101,10 +124,14 @@
 .mr-10 {
     margin-right: 10px; 
  }
+ .mb-10 {
+    margin-bottom: 10px;
+ }
  /* borders */
  .bdr {
-    border: 3px dashed thistle;
-    box-shadow: 1px 2px 3px black;
+    border: 1px solid var(--White);
+    box-shadow: 2px 3px 2px 3px var(--light-purple);
+    border-radius: 3px;
  }
  .bdr:active {
     margin: 1px;
@@ -115,4 +142,7 @@
  /* text */
  .text-center {
     text-align: center;
+ }
+ .text-light {
+    color:aliceblue;
  }
