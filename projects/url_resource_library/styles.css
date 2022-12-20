@@ -1,0 +1,111 @@
+* {
+    margin: 0;
+}
+body {
+    height: 100vh;
+    width: 100vw;
+}
+/* flexbox */
+.flex {
+    display: flex;
+}
+.col {
+    flex-flow: column wrap;
+}
+.row {
+    flex-flow: row wrap;
+}
+.justify-center {
+    align-items:flex-start;
+    justify-content:center;
+}
+.justify-start {
+    align-items: flex-start;
+    justify-content: left;
+}
+.align-end {
+    align-items: flex-end;
+}
+.goban-bg {
+    background: url('https://upload.wikimedia.org/wikipedia/commons/5/53/Blank_Go_board_9x9.svg') no-repeat 0 100%;
+    width: 460px;
+}
+/* borders */
+.container {
+    display:flex;
+    height: auto;
+    width: 100%;
+}
+.goban-square {
+    /* display:flex; */
+    /* flex-flow:wrap-reverse;
+    justify-content: center;
+    align-items: center; */
+    height:51px;
+    width:51px;
+}
+.goban-container {
+    height: 460px;
+    width: 460px;
+}
+#hitbox-container {
+    height:460px;
+    width:460px;
+}
+.stone {
+    height: 51px;
+    width: 51px;
+}
+
+/* spacing */
+.m-l-px-35 {
+    margin-left: 35px;
+}
+.m-t-px-15 {
+    margin-top: 15px;
+}
+.m-t-px-10 {
+    margin-top: 11px;
+}
+.m-t-px-12 {
+    margin-top: 12px;
+}
+.m-1 {
+    margin: 1%;
+}
+.m-5 {
+    margin: 5%;
+}
+.mt-5 {
+    margin-top: 5%;
+}
+.mt-10 {
+    margin-top: 10%;
+}
+.ml-5 {
+    margin-left: 5%;
+}
+.ml-10 {
+    margin-left: 10%;
+}
+.p-l-10 {
+    padding-left: 5%;
+}
+.p-l-5 {
+    padding-left: 120px;
+}
+
+.img-sm {
+    height: 50px;
+    width: 50px;
+}
+.pad-container-column {
+    height: 100vh;
+    width: 100px;
+    background-color: slateblue;
+}
+.pad-container-row {
+    height: 100px;
+    width: 100vw;
+    background-color: bisque;
+}
