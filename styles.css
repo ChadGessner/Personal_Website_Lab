@@ -11,7 +11,6 @@
     font-family: monospace;
     color:aliceblue;
     background-color: black;
-
 }
 /* flex */
 .flex {
@@ -22,6 +21,12 @@
 }
 .row {
     flex-flow: row wrap;
+}
+.col-reversed {
+    flex-flow:column-reverse wrap;
+}
+.row-reversed {
+    flex-flow:row-reverse wrap;
 }
 .justify-evenly {
     justify-content: space-evenly;
@@ -35,6 +40,7 @@
 .align-start {
     align-items: flex-start;
 }
+
 .align-end {
     align-items: flex-end;
 }
@@ -54,9 +60,24 @@
     height: 120px;
     width:30%;
 }
+.link-zelda {
+    background-image: url('C:/Users/Chad/Desktop/Grand Circus/Personal_Website_Lab/projects/images/Happy_Link.png');
+    height: 16px;
+    width: 16px;
+}
+.link-container {
+    width: 100%;
+}
 .link {
-    border: 1px solid pink;
-    background-color: var(--Grey);
+    /* box-shadow: 2px 4px var(--Dark-Purple);
+    background-color: var(--Grey); */
+    height: 20px;
+    width: 50%;
+}
+.box {
+    background-color: var(--Blue);
+    height: 6px;
+    width: 100%;
 }
 .navbar {
     height: 120px;
@@ -69,22 +90,47 @@
     width: 90%;
     margin-right: 20px;
 }
-
+.list-card a {
+    cursor: url('C:/Users/Chad/Desktop/Grand Circus/Personal_Website_Lab/projects/images/link_sword.png'), auto;
+}
+.list-card {
+    min-width: 10%;
+}
+li {
+    list-style-image: url('C:/Users/Chad/Desktop/Grand Circus/Personal_Website_Lab/projects/images/link_sword.png');
+    
+}
 /* footer */
 .footer-container {
-    height: 50vh;
-    background-color: var(--Grey);
+    margin-top: auto;
+    padding-top: 1%;
+    height: 80px;
+    background-color: black;
 }
 .footer {
     height: 80px;
     width:100%;
-    background-color: var(--Dark-Purple);
+    background-color: var(--Darker-Blue);
 }
 .footer-links a {
+    padding: 4px;
+    box-shadow: 2px 4px #0C0032;
     background-color: var(--Grey);
 }
 /* containers */
+.head-shot {
+    height: 100px;
+    width: 100px;
+}
+.main-image-content {
+    height: auto;
+    width: 20vw;
+}
+.main-image-content:hover {
+    cursor: url('C:/Users/Chad/Desktop/Grand Circus/Personal_Website_Lab/projects/images/Happy_Link.png'), auto;
+}
 .section {
+    height: 70vh;
     background-color: var(--Dark-Purple);
 }
 .padding {
@@ -107,16 +153,19 @@
 .darker-blue {
     background-color: var(--Darker-Blue);
 }
+.dark-purple {
+    background-color: var(--Dark-Purple);
+}
 .light-purple {
     background-color: var(--light-purple);
 }
 .grey {
     background-color: var(--Grey);
 }
-.head-shot {
-    height: 100px;
-    width: 100px;
+.black {
+    background-color: black;
 }
+
 /* spacing */
 .ml-10 {
    margin-left: 10px; 
@@ -127,10 +176,19 @@
  .mb-10 {
     margin-bottom: 10px;
  }
+ .mt-10 {
+    margin-top: 10px;
+ }
+ .width-60 {
+    width: 60%;
+ }
+ .p-b-10 {
+    padding-bottom:10px;
+ }
  /* borders */
  .bdr {
     border: 1px solid var(--White);
-    box-shadow: 2px 3px 2px 3px var(--light-purple);
+    /* box-shadow: 2px 3px 2px 3px var(--light-purple); */
     border-radius: 3px;
  }
  .bdr:active {
