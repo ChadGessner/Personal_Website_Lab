@@ -8,10 +8,13 @@
 }
 * {
     margin: 0;
-    font-family: monospace;
+    font-family: 'Press Start 2P';
+    font-weight: 100;
     color:aliceblue;
     background-color: black;
 }
+
+
 /* flex */
 .flex {
     display: flex;
@@ -85,20 +88,21 @@
     background-color: var(--Dark-Purple);
 }
 /* lists */
+.list-card dl {
+    font-size: 10px;
+}
 .list-card li {
     background-color: var(--Dark-Purple);
     width: 90%;
     margin-right: 20px;
+    list-style-image: url('C:/Users/Chad/Desktop/Grand Circus/Personal_Website_Lab/projects/images/link_sword.png');
+    font-size: 8px;
 }
 .list-card a {
     cursor: url('C:/Users/Chad/Desktop/Grand Circus/Personal_Website_Lab/projects/images/link_sword.png'), auto;
 }
 .list-card {
     min-width: 10%;
-}
-li {
-    list-style-image: url('C:/Users/Chad/Desktop/Grand Circus/Personal_Website_Lab/projects/images/link_sword.png');
-    
 }
 /* footer */
 .footer-container {
@@ -122,13 +126,7 @@ li {
     height: 100px;
     width: 100px;
 }
-.main-image-content {
-    height: auto;
-    width: 20vw;
-}
-.main-image-content:hover {
-    cursor: url('C:/Users/Chad/Desktop/Grand Circus/Personal_Website_Lab/projects/images/Happy_Link.png'), auto;
-}
+
 .section {
     height: 70vh;
     background-color: var(--Dark-Purple);
@@ -147,6 +145,32 @@ li {
     height: 120px;
     width: 20%;
 }
+/* image section */
+.image-message-container {
+    width: 90%;
+    height: 35%;
+}
+.image-message {
+    padding: 3px;
+    overflow: scroll;
+    scroll-behavior: smooth;
+    min-width: 90%;
+    text-align: start;
+    font-size: 8px;
+    height:auto;
+}
+.image-message::-webkit-scrollbar {
+    display: none;
+}
+.main-image-content {
+    height: 40%;
+    max-height: 50%;
+    width: 40%;
+}
+.main-image-content:hover {
+    cursor: url('C:/Users/Chad/Desktop/Grand Circus/Personal_Website_Lab/projects/images/Happy_Link.png'), auto;
+}
+/* colors */
 .blue {
     background-color: var(--Blue);
 }
@@ -167,6 +191,9 @@ li {
 }
 
 /* spacing */
+.no-overflow {
+    overflow:hidden;
+}
 .ml-10 {
    margin-left: 10px; 
 }
@@ -182,25 +209,45 @@ li {
  .width-60 {
     width: 60%;
  }
+ .m-10 {
+    margin:10px;
+ }
+ .p-10 {
+    padding:10px;
+ }
  .p-b-10 {
     padding-bottom:10px;
+ }
+ .height-max-35 {
+    max-height: 35%;
+ }
+ .width-max-35 {
+    max-width: 32%;
  }
  /* borders */
  .bdr {
     border: 1px solid var(--White);
-    /* box-shadow: 2px 3px 2px 3px var(--light-purple); */
     border-radius: 3px;
  }
- .bdr:active {
-    margin: 1px;
+ .text-start {
+    text-align: end;
  }
- .bdr:target {
-    margin:1px;
- }
- /* text */
  .text-center {
     text-align: center;
  }
  .text-light {
     color:aliceblue;
+ }
+ .text-sm {
+    font-size:small;
+ }
+ .text-smaller {
+    font-size:8px;
+ }
+ .press-start {
+    font-family: 'Press Start 2P';
+ }
+ .a-style {
+    text-decoration: none;
+    text-decoration-style:none;
  }
