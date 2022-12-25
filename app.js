@@ -4,6 +4,8 @@ const home = "C:/Users/Chad/Desktop/Grand Circus/Personal_Website_Lab/home.html"
 const linksArray = [home,about,portfolio];
 const nav = document.getElementById('nav');
 let links = document.getElementsByClassName('link');
+let timerTick = 0;
+
 const educationLinks = document.querySelectorAll('a.light-purple');
 const imageContent = document.getElementById('main-image');
 const imageTitle = document.getElementById('image-title');
@@ -14,9 +16,37 @@ const bulkyLinkContainer = document.getElementById('put-here')
 const bulkyLink =  `
     <a href=${bulky} class="a-style text-smaller press-start text-light darker-blue text-end">Bulky Book Finished Project</a>
 `;
-//bulkyLink.href = 'https://github.com/ChadGessner/BulkyBook';
-//bulkyLink.innerText = 'here is a link';
-
+const listCard = document.getElementsByClassName('list-card');
+const bubsImage = document.getElementById('bubs-image');
+const bubsMessage = document.getElementById('bubs-message');
+const mrBubsArray = [
+    'https://i.imgur.com/unCeZIc.jpg',
+    'https://imgur.com/hYpIreD.jpg',
+    'https://i.imgur.com/cLmfnsL.jpg',
+    'https://i.imgur.com/wLwF5rt.jpg',
+    'https://i.imgur.com/9x4uyw6.jpg',
+    'https://i.imgur.com/368NXOY.jpg',
+    'https://i.imgur.com/83f1lfY.jpg',
+    'https://i.imgur.com/E5jZnr9.jpg',
+    'https://i.imgur.com/zF4Tdd9.jpg',
+    'https://i.imgur.com/qvwp2kZ.jpg',
+    'https://i.imgur.com/l3VeWFt.jpg',
+    'https://i.imgur.com/cLmfnsL.jpg',
+    'https://i.imgur.com/hYpIreD.jpg',
+    'https://i.imgur.com/vHfDw0f.jpg',
+    'https://i.imgur.com/57ObGEh.jpg',
+    'https://i.imgur.com/AykQMu0.jpg',
+    'https://i.imgur.com/qvwp2kZ.jpg',
+    'https://i.imgur.com/9x4uyw6.jpg',
+    'https://i.imgur.com/ZKbgk96.jpg',
+    'https://i.imgur.com/368NXOY.jpg',
+];
+const mrBubsMessages = [
+    'This is Bubs!',
+    'he is my friend!',
+    'I like you and him!',
+    'and he likes you!'
+]
 const imageMessageArray = [
     '',
     '',
@@ -30,9 +60,35 @@ const imageMessageArray = [
     'This course is comprehensive to say the least. The instructor, Bruhgen Patel, takes you through all the steps from beginning to end creating a truly enterprise level website from creating the first project to deploying the complete solution to Microsoft Azure.\n\n The course covers a wide range of ASP .NET topics. The project uses Entity Framework Core with Microsoft SQL Server Management Studio, MVC using both manual Controllers and Views as well as scaffolding. Even using AJAX to pass data between Views and Controllers.\n\n The front end uses Razor views so as you go through the course you become familiar with razor syntax and ASP tag helpers. You also become familiar with using NewtonSoft.Json to serialize and deserialize JSON as the payment functionality of the site is outsourced to a third party API. There are lots of front end bells and whistles used such as JQuery, Bootstrap, Bootswatch and more to make the interface look slick while keeping focused on pure .NET related topics.\n\n Saying I got my moneys worth on this course is a massive understatement. My only complaint is that to complete this course honestly you need to deploy the project to Microsoft Azure which can end up costing money so I\'m told, so although I have completed 95% of this course I don\'t yet have the certificate but I have a link to my completed project from this course.',
     'The quick brown fox jumped over the lazy dog',
 ];
+
+let gradientStartCount = 0;
+let gradientEndCount = 100;
+let gradientDegreeCount = -35;
+let indexOnMouseLeave = -1;
+const bubsMessageContainer = document.getElementById('bubs-message-container');
+const bubsMessageContainers = document.getElementsByClassName('label-effect');
+
+const bubsSectionController = () => {
+    let random = Math.floor(Math.random() * mrBubsArray.length -1);
+    random = random < 0 ? 0 : random;
+    bubsMessage.innerText = mrBubsMessages[timerTick];
+    bubsImage.src = mrBubsArray[random];
+    timerTick = timerTick === mrBubsMessages.length - 1 ? 0 : timerTick += 1;
+    
+}
 const loadLinks = () => {
     for(let i = 0; i < links.length;i++){
         links[i].href = linksArray[i];
+    }
+}
+const formatListTitles = () => {
+    
+    for(let i = 0; i < listCard.length;i++){
+        let title = listCard[i];
+        console.log(title.firstChild.textContent.trim().length)
+        if(title.firstChild.textContent.trim().length > 'JavaScript'.length){
+            title.style.fontSize = '12px';
+        }
     }
 }
 const onClick = () => {
@@ -55,5 +111,87 @@ const onClick = () => {
         })
     })
 }
+const modifyGradient = (
+    isRotate,
+    isReverse,
+    gradientCount
+    ) => {
+    if(isRotate){
+        return gradientCount;
+    }
+    if(isReverse){
+        return gradientCount
+    } 
+    return gradientCount--;
+}
+
+const addGradient = () => {
+    if(indexOnMouseLeave !== -1){
+        let isRotate = Math.abs(gradientStartCount) === 40;
+        let isReverse = Math.abs(gradientDegreeCount) === 36//Math.abs(gradientDegreeCount) === 35;//gradientDegreeCount === 35;
+        let isBoth = isRotate && !isReverse;
+        bubsMessageContainers[indexOnMouseLeave].style = ` 
+        background-image: linear-gradient(
+        ${gradientDegreeCount}deg,
+        black ${gradientStartCount}%,
+        var(--Blue) ,
+        black ${gradientEndCount}%
+        )`;
+        if(!isRotate){
+            gradientStartCount = isReverse ? gradientStartCount - 1 : gradientStartCount + 1;
+            gradientEndCount = isReverse ? gradientEndCount + 1 : gradientEndCount - 1;
+            isRotate = Math.abs(gradientStartCount) === 40;
+            isReverse = Math.abs(gradientDegreeCount) === 36;
+            isBoth = isRotate && !isReverse;
+            if(isRotate && isReverse){
+                console.log('hit')
+                gradientDegreeCount = gradientDegreeCount - 1;
+                isReverse = Math.abs(gradientDegreeCount) === 36;
+            }
+            
+        }
+        if(isRotate ){
+            isReverse = Math.abs(gradientDegreeCount) === 36;
+            gradientDegreeCount = isReverse ? gradientDegreeCount - 1 : gradientDegreeCount + 1;
+            if(Math.abs(gradientDegreeCount) === 36){
+                
+                gradientStartCount = !isReverse ? gradientStartCount - 1 : gradientStartCount + 1;
+                
+                gradientEndCount = !isReverse ? gradientEndCount + 1 : gradientEndCount - 1;
+                console.log(isReverse + "  " + isRotate)
+            }
+        }    
+    }
+}
+let labelBackgroundInterval;
+const bubsInterval = setInterval(bubsSectionController, 2000);
+let isMouseEntered = false;
+const onMouseEntered = (index) => {
+    indexOnMouseLeave = index;
+}
+const onMouseLeave = (index) => {
+    if(index === indexOnMouseLeave){
+        
+        clearInterval(labelBackgroundInterval);
+        indexOnMouseLeave = -1;
+    }
+}
+for(let i = 0; i < bubsMessageContainers.length;i++){
+    let container = bubsMessageContainers[i];
+    container.addEventListener('mouseenter', ()=> {
+        labelBackgroundInterval  = setInterval(addGradient,1)
+        
+        onMouseEntered(i);
+    })
+    container.addEventListener('mouseleave', ()=> {
+        onMouseLeave(i);
+        gradientStartCount = -0;
+        gradientEndCount = 100;
+        gradientDegreeCount = -35;
+        bubsMessageContainers[i].style = 'background-image: var(--Blue)'
+    })
+}
+bubsInterval;
+formatListTitles();
 onClick();
 loadLinks();
