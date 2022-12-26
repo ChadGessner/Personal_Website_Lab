@@ -1,5 +1,8 @@
 * {
     margin: 0;
+    font-family: 'Press Start 2P';
+    color:white;
+    
 }
 body {
     height: 100vh;
@@ -102,10 +105,12 @@ body {
 .pad-container-column {
     height: 100vh;
     width: 100px;
-    background-color: slateblue;
+    font-size:  18px;
+    background-color: #190061;
 }
 .pad-container-row {
     height: 100px;
     width: 100vw;
-    background-color: bisque;
+    font-size:  10px;
+    background-color: #3500D3;
 }

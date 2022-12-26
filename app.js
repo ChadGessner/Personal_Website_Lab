@@ -60,6 +60,17 @@ const imageMessageArray = [
     'This course is comprehensive to say the least. The instructor, Bruhgen Patel, takes you through all the steps from beginning to end creating a truly enterprise level website from creating the first project to deploying the complete solution to Microsoft Azure.\n\n The course covers a wide range of ASP .NET topics. The project uses Entity Framework Core with Microsoft SQL Server Management Studio, MVC using both manual Controllers and Views as well as scaffolding. Even using AJAX to pass data between Views and Controllers.\n\n The front end uses Razor views so as you go through the course you become familiar with razor syntax and ASP tag helpers. You also become familiar with using NewtonSoft.Json to serialize and deserialize JSON as the payment functionality of the site is outsourced to a third party API. There are lots of front end bells and whistles used such as JQuery, Bootstrap, Bootswatch and more to make the interface look slick while keeping focused on pure .NET related topics.\n\n Saying I got my moneys worth on this course is a massive understatement. My only complaint is that to complete this course honestly you need to deploy the project to Microsoft Azure which can end up costing money so I\'m told, so although I have completed 95% of this course I don\'t yet have the certificate but I have a link to my completed project from this course.',
     'The quick brown fox jumped over the lazy dog',
 ];
+const projectLinksArray = [
+    'file:///C:/Users/Chad/Desktop/Grand%20Circus/Personal_Website_Lab/projects/snek/snek.html',
+    'file:///C:/Users/Chad/Desktop/Grand%20Circus/Personal_Website_Lab/projects/basic-tetris/index.html',
+    'file:///C:/Users/Chad/Desktop/Grand%20Circus/Personal_Website_Lab/projects/url_resource_library/index.html',
+    'file:///C:/Users/Chad/Desktop/Grand%20Circus/Personal_Website_Lab/projects/nft-preview-card-component-main/index.html',
+    'file:///C:/Users/Chad/Desktop/Grand%20Circus/Personal_Website_Lab/projects/order-summary-component/index.html',
+];
+const projectLinks = document.getElementsByClassName('project-link');
+let iframe = document.getElementById('iframe');
+const projectSection = document.getElementById('project-section');
+let projectsLabel = document.getElementById('projects-label');
 
 let gradientStartCount = 0;
 let gradientEndCount = 100;
@@ -110,6 +121,22 @@ const onClick = () => {
             
         })
     })
+}
+const projectsLinksOnClick = () => {
+    for(let i = 0; i < projectLinks.length;i++){
+        projectLinks[i].addEventListener('click', ()=> {
+            let iframeElement = document.createElement('iframe');
+            iframeElement.id = 'iframe';
+            iframeElement.scrolling = 'no';
+            iframeElement.width = '1000px';
+            iframeElement.height = '100%';
+            iframeElement.src = projectLinks[i].name;
+            console.log(projectLinks[i].name);
+            iframe.src = projectLinks[i].name;
+            projectsLabel.innerText = projectLinks[i].innerText;
+
+        })
+    }
 }
 const modifyGradient = (
     isRotate,
@@ -179,7 +206,7 @@ const onMouseLeave = (index) => {
 for(let i = 0; i < bubsMessageContainers.length;i++){
     let container = bubsMessageContainers[i];
     container.addEventListener('mouseenter', ()=> {
-        labelBackgroundInterval  = setInterval(addGradient,1)
+        labelBackgroundInterval  = setInterval(addGradient,30)
         
         onMouseEntered(i);
     })
@@ -195,3 +222,4 @@ bubsInterval;
 formatListTitles();
 onClick();
 loadLinks();
+projectsLinksOnClick();

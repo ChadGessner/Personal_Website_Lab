@@ -13,8 +13,6 @@
     color:aliceblue;
     background-color: black;
 }
-
-
 /* flex */
 .float {
     float:inline-end;
@@ -46,7 +44,6 @@
 .align-start {
     align-items: flex-start;
 }
-
 .align-end {
     align-items: flex-end;
 }
@@ -107,7 +104,6 @@
 .list-card a {
     cursor: url('C:/Users/Chad/Desktop/Grand Circus/Personal_Website_Lab/projects/images/link_sword.png'), auto;
 }
-
 .list-card {
     min-height: 40%;
 
@@ -128,7 +124,8 @@
 }
 .footer {
     height: 80px;
-    min-width:100%;
+    min-width:90%;
+    max-width:90%;
     background-color: var(--Darker-Blue);
 }
 .footer-links a {
@@ -141,7 +138,6 @@
     height: 100px;
     width: 100px;
 }
-
 .section {
     height: 70vh;
     background-color: var(--Dark-Purple);
@@ -151,7 +147,6 @@
     height: 120px;
 }
 .container {
-    
     height: 120px;
     /* background-color: var(--Grey); */
 }
@@ -166,7 +161,7 @@
     height: 100%;
 }
 .image-message-container {
-    position: inherit;
+    display:inherit;
     width: 90%;
     height: 30%;
     overflow:none;
@@ -183,10 +178,16 @@
 .image-message::-webkit-scrollbar {
     display: none;
 }
+#bubs-image {
+    display:inherit;
+    width: auto;
+    max-width: 300px;
+    height: auto;
+    max-height: 300px;
+}
 .main-image-content {
     position: static;
-    height: 300px;
-    width: 300px;
+    
 }
 .main-image-content:hover {
     cursor: url('C:/Users/Chad/Desktop/Grand Circus/Personal_Website_Lab/projects/images/Happy_Link.png'), auto;
@@ -227,8 +228,28 @@
  .mt-10 {
     margin-top: 10px;
  }
+ .absolute-75 {
+    min-width: 75%;
+    max-width: 75%;
+ }
+ .absolute-height-50 {
+    max-height: 10vh;
+ }
+ .absolute-height-60 {
+    height: 60%;
+ }
+ .absolute-height {
+    height: 70%;
+    max-height: 70%;
+ }
+ .height-100 {
+    height: fit-content;
+ }
  .width-60 {
     width: 60%;
+ }
+ .width-40 {
+    width: 40%;
  }
  .m-10 {
     margin:10px;
@@ -318,6 +339,15 @@
  .rect-hor-lg {
     width: 300px;
     height: 100px;
+ }
+ /* portfolio */
+ .iframe::-webkit-scrollbar {
+    display:none;
+ }
+ #project-section {
+    height: auto;
+    width: fit-content;
+    overflow: hidden
  }
  /* for javasript */
  /* .label-effect */
