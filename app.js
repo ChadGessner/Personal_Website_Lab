@@ -1,7 +1,16 @@
 const about = "C:/Users/Chad/Desktop/Grand Circus/Personal_Website_Lab/about.html";
 const portfolio = "C:/Users/Chad/Desktop/Grand Circus/Personal_Website_Lab/portfolio.html";
-const home = "C:/Users/Chad/Desktop/Grand Circus/Personal_Website_Lab/home.html"
-const linksArray = [home,about,portfolio];
+const home = "C:/Users/Chad/Desktop/Grand Circus/Personal_Website_Lab/home.html";
+const aboutMeSection = document.getElementById('about-me');
+const bubsSection = document.getElementById('bubs-section');
+const westMichiganGoClubSection = document.getElementById('west-michigan-go-club');
+const aboutMeImage = document.getElementById('about-me-image');
+const aboutMeLabel = document.getElementById('about-me-label');
+const linksArray = [
+    home,
+    about,
+    portfolio
+];
 const nav = document.getElementById('nav');
 let links = document.getElementsByClassName('link');
 let timerTick = 0;
@@ -67,6 +76,27 @@ const projectLinksArray = [
     'file:///C:/Users/Chad/Desktop/Grand%20Circus/Personal_Website_Lab/projects/nft-preview-card-component-main/index.html',
     'file:///C:/Users/Chad/Desktop/Grand%20Circus/Personal_Website_Lab/projects/order-summary-component/index.html',
 ];
+const aboutMeImageArray = [
+    'C:/Users/Chad/Desktop/Grand Circus/Personal_Website_Lab/projects/images/0ECQGTp - Imgur.jpg',
+    'C:/Users/Chad/Desktop/Grand Circus/Personal_Website_Lab/projects/images/ermagerd_crop.png',
+    'C:/Users/Chad/Desktop/Grand Circus/Personal_Website_Lab/projects/images/mi_state_tournament.jpg'
+];
+const aboutMeMessageArray = [
+    'About Me',
+    'Ermagerd! It\'s Berbs! Muh fravrit derg!',
+    'West Michigan Go Club hosted the state tournament 2022'
+];
+const aboutMeLinksArray = [
+    'https://www.linkedin.com/in/chad-gessner/',
+    '#',
+    'https://www.facebook.com/media/set/?set=oa.580517606645250&type=3'
+];
+const aboutMeClickEventsArray = [
+    aboutMeSection,
+    bubsSection,
+    westMichiganGoClubSection
+]
+
 const projectLinks = document.getElementsByClassName('project-link');
 let iframe = document.getElementById('iframe');
 const projectSection = document.getElementById('project-section');
@@ -79,13 +109,25 @@ let indexOnMouseLeave = -1;
 const bubsMessageContainer = document.getElementById('bubs-message-container');
 const bubsMessageContainers = document.getElementsByClassName('label-effect');
 
+const aboutMeClickEvents = () => {
+    for(let i = 0; i < aboutMeClickEventsArray.length; i++){
+        aboutMeClickEventsArray[i].addEventListener('click', ()=> {
+            console.log('some stuff...')
+            aboutMeImage.href = aboutMeLinksArray[i];
+            aboutMeLabel.innerText = aboutMeMessageArray[i];
+            aboutMeLabel.style.fontSize = i === 0 ? '1.5em':'1em'
+            aboutMeImage.src = aboutMeImageArray[i];
+        })
+    }
+}
+
 const bubsSectionController = () => {
     let random = Math.floor(Math.random() * mrBubsArray.length -1);
     random = random < 0 ? 0 : random;
     bubsMessage.innerText = mrBubsMessages[timerTick];
     bubsImage.src = mrBubsArray[random];
     timerTick = timerTick === mrBubsMessages.length - 1 ? 0 : timerTick += 1;
-    
+    aboutMeClickEvents();
 }
 const loadLinks = () => {
     for(let i = 0; i < links.length;i++){
@@ -219,6 +261,7 @@ for(let i = 0; i < bubsMessageContainers.length;i++){
     })
 }
 bubsInterval;
+
 formatListTitles();
 onClick();
 loadLinks();
