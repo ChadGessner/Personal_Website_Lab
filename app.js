@@ -217,15 +217,12 @@ const addGradient = () => {
                 gradientDegreeCount = gradientDegreeCount - 1;
                 isReverse = Math.abs(gradientDegreeCount) === 36;
             }
-            
         }
         if(isRotate ){
             isReverse = Math.abs(gradientDegreeCount) === 36;
             gradientDegreeCount = isReverse ? gradientDegreeCount - 1 : gradientDegreeCount + 1;
             if(Math.abs(gradientDegreeCount) === 36){
-                
                 gradientStartCount = !isReverse ? gradientStartCount - 1 : gradientStartCount + 1;
-                
                 gradientEndCount = !isReverse ? gradientEndCount + 1 : gradientEndCount - 1;
                 console.log(isReverse + "  " + isRotate)
             }
@@ -260,8 +257,60 @@ for(let i = 0; i < bubsMessageContainers.length;i++){
         bubsMessageContainers[i].style = 'background-image: var(--Blue)'
     })
 }
-bubsInterval;
+const headShot = document.getElementsByClassName('label-effect');
+const badThings = document.getElementById('bad-things');
+const itsFun = document.getElementById('its-fun-to-do-bad-things');
+const bubsDisplayContainer = document.getElementById('bubs-display-container')
+console.log(badThings)
+const hoodRatStuff = document.getElementById('hood-rat-stuff')
+const badThingsController = () => {
+    badThings.addEventListener('mouseenter', (e)=> {
+        console.log('hood rat stuff')
+        bubsImage.classList.add('no-display');
+        hoodRatStuff.classList.remove('no-display');
+        bubsDisplayContainer.classList.add('no-display')
+        itsFun.src = "https://www.youtube.com/embed/qcqOgnQyXp4?autoplay=true"
+    
+    });
+    badThings.addEventListener('mouseleave', ()=> {
+        hoodRatStuff.classList.add('no-display')
+    }) 
+}
 
+const navController = () => {
+    nav.addEventListener('mouseenter', (e)=> {
+        console.log(e);
+        for(let i = 0; i < headShot.length;i++){
+            headShot[i] += e;
+            let someInterval = setInterval(addGradient,30);
+            someInterval;
+            //onMouseEntered(i)
+            console.log(someInterval.valueOf())
+        }
+        nav.addEventListener('mouseleave', (a)=> {
+            for(let i = 0; i < headShot.length;i++){
+                headShot[i] += a;
+                clearInterval(someInterval);
+                          gradientStartCount = -0;
+            gradientEndCount = 100;
+            gradientDegreeCount = -35;
+                console.log(someInterval.valueOf())
+            }
+        })
+    })
+    // nav.addEventListener('mouseleave', (e)=> {
+    //         for(let i = 0; i < headShot.length;i++){
+    //             headShot[i] += e;
+    //         gradientStartCount = -0;
+    //         gradientEndCount = 100;
+    //         gradientDegreeCount = -35;
+    //         clearInterval(someInterval);
+    //         console.log('things and stuff')
+    //     }
+    // })
+}
+bubsInterval;
+badThingsController();
 formatListTitles();
 onClick();
 loadLinks();

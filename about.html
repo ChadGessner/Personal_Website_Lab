@@ -4,6 +4,7 @@
         <link rel="stylesheet" href="styles.css">
     </head>
     <body>
+        
         <nav id="nav" class="navbar flex row justify-center">
             <div class="links flex col justify-center black">
                 <h3 class="text-center grey mb-10">Home Page</h3>
@@ -19,46 +20,26 @@
                 </div>
                 <hr>
             </div>
-            <div class="padding flex align-start">
-                <img 
-                aria-label="cool picture of me" 
-                class="head-shot bdr ml-10 mr-10" 
-                src="C:\Users\Chad\Desktop\Grand Circus\Personal_Website_Lab\projects\images\0ECQGTp - Imgur.jpg"/>
-                <h3 
-                class="text-center grey mr-10">Chad Gessner Full Stack Software Developer</h3>
-                <img 
-                aria-label="cool picture of me" 
-                class="head-shot bdr mr-10" 
-                src="C:\Users\Chad\Desktop\Grand Circus\Personal_Website_Lab\projects\images\0ECQGTp - Imgur.jpg"/>
+            <div class="padding flex align-start label-effect">
+                <img aria-label="cool picture of me" class="head-shot  ml-10 mr-10" src="C:\Users\Chad\Desktop\Grand Circus\Personal_Website_Lab\projects\images\0ECQGTp - Imgur.jpg"/>
+                <h3 class="text-center bubs-message grey mr-10">Chad Gessner Full Stack Software Developer</h3>
+                <img aria-label="cool picture of me" class="head-shot  mr-10" src="C:\Users\Chad\Desktop\Grand Circus\Personal_Website_Lab\projects\images\0ECQGTp - Imgur.jpg"/>
             </div>
             <div class="links flex col justify-center black">
                 <h3 class="text-center grey mb-10">Navigate</h3>
                 
-                <div 
-                class="link-container flex justify-end align-end black">
-                    <a 
-                    class="link flex row justify-center blue" 
-                    href="#">Home<div 
-                    class="box black">
-                </div></a>
+                <div class="link-container flex justify-end align-end black">
+                    <a class="link flex row justify-center blue" href="#">Home<div class="box black"></div></a>
                 </div>
-                <div 
-                class="link-container row align-center justify-center flex black">
-                    <a 
-                    class="link flex row justify-center light-purple" 
-                    href="#">About<div class="box black">
-
-                    </div></a>
+                <div class="link-container row align-center justify-center flex black">
+                    <a class="link flex row justify-center light-purple" href="#">About<div class="box black"></div></a>
                 </div>
-                <div 
-                class="link-container flex align-start black">
-                    <a 
-                    class="link flex row justify-center darker-blue" 
-                    href="#">Portfolio<div 
-                    class="box black"></div></a>
+                <div class="link-container flex align-start black">
+                    <a class="link flex row justify-center darker-blue" href="#">Portfolio<div class="box black"></div></a>
                 </div>
                 <hr>
             </div>
+            
         </nav>
         <hr>
         <div class="flex row justify-between bdr absolute-height">
@@ -67,7 +48,19 @@
                     <div  class="flex label-effect bubs-message-container mb-10 text-center blue justify-center align-center">
                         <h2 id="bubs-message" class="bubs-message">This is bubs</h2>
                     </div>
-                    <div class="flex justify-center align-center bdr p-10 label-effect m-10 height-100">
+                    <div  id="hood-rat-stuff" class="no-display" >
+                        <iframe 
+                        id="its-fun-to-do-bad-things"
+                        width="400" 
+                        height="315" 
+                        src="https://www.youtube.com/embed/qcqOgnQyXp4?start=18" 
+                        title="YouTube video player" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen></iframe>
+                    </div>
+                    <div id="bubs-display-container" class="flex justify-center align-center bdr p-10 label-effect m-10 height-100">
+                        
                         <img 
                         id="bubs-image" 
                         
@@ -77,12 +70,12 @@
                     </div>
                 </div>
             </section>
-            <section id="about-me" class="flex row section mt-10 bdr m-10 p-10 height-100 ">
+            <section  class="flex row section mt-10 bdr m-10 p-10 height-100 ">
                 <div class="flex col justify-between align-center p-10">
                     <div id="bubs-message-container" class="flex label-effect bubs-message-container mb-10 text-center blue justify-center align-center">
                         <h2 id="about-me-label" class="bubs-message m-10">About Me</h2>
                     </div>
-                    <div class="bdr p-10 m-10 label-effect">
+                    <div id="about-me" class="bdr p-10 m-10 label-effect">
                         <img
                         id="about-me-image"
                         class="p-10 blue head-shot"
@@ -91,7 +84,9 @@
                         height="100px"
                         >
                     </div>
-                    <div class="flex row bdr label-effect ">
+                    
+                    
+                    <div class="flex row bdr ">
                         <div class="p-10 m-10 bdr">
                             <p class="flex col text-center blue w-500">
                                 As you may have already guessed, my name is Chad Gessner and I am a  <em class="flex col text-center blue w-500">full stack software developer</em>. 
@@ -102,10 +97,11 @@
                                 When I'm not coding you can find me at the kava kasa playing go on tuesday nights with the <em class="flex col text-center blue w-500">West Michigan Go Club</em>
                             </p>
                             <br>
-                            <p class="flex col text-center blue w-500">
-                                And if I'm not there I'm probably just out doing hood rat stuff with my friends<em class="flex col text-center blue w-500">I like to do bad things, its fun to do bad things like smokin' wiv' cigawettes...</em>
-                            </p>
-
+                            <div id="bad-things">
+                                <p class="flex col text-center blue w-500">
+                                    And if I'm not there I'm probably just out doing hood rat stuff with my friends<em class="flex col text-center blue w-500">I like to do bad things, its fun to do bad things like smokin' wiv' cigawettes...</em>
+                                </p>
+                            </div>
                         </div>
                         
                         <!-- <div class="sqr-lg bdr-purple flex col justify-start">

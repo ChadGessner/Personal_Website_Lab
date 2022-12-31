@@ -13,6 +13,9 @@
     color:aliceblue;
     background-color: black;
 }
+.no-display {
+    display:none;
+}
 /* flex */
 .float {
     float:inline-end;
@@ -371,7 +374,6 @@
  }
  #west-michigan-go-club:hover {
     cursor: url("C:/Users/Chad/Desktop/Grand Circus/Personal_Website_Lab/projects/images/link_sword.png"), auto;
-    
  }
  /* for javasript */
  /* .label-effect */
