@@ -1,0 +1,391 @@
+:root {
+    --Dark-Purple: #0C0032;
+    --Blue: #3500D3;
+    --Grey: #282828;
+    --Darker-Blue: #240090;
+    --light-purple: #190061;
+    --White: hsl(0, 0%, 100%);
+}
+* {
+    margin: 0;
+    font-family: 'Press Start 2P';
+    font-weight: 100;
+    color:aliceblue;
+    background-color: black;
+}
+.no-display {
+    display:none;
+}
+/* flex */
+.float {
+    float:inline-end;
+}
+.flex {
+    display: flex;
+}
+.col {
+    flex-flow: column wrap;
+}
+.row {
+    flex-flow: row wrap;
+}
+.col-reversed {
+    flex-flow:column-reverse wrap;
+}
+.row-reversed {
+    flex-flow:row-reverse wrap;
+}
+.justify-evenly {
+    justify-content: space-evenly;
+}
+.justify-between {
+    justify-content: space-between;
+}
+.justify-around {
+    justify-content: space-around;
+}
+.align-start {
+    align-items: flex-start;
+}
+.align-end {
+    align-items: flex-end;
+}
+.justify-center {
+    justify-content: center;
+}
+.justify-end {
+    justify-content: flex-end;
+}
+.align-center {
+    align-items: center;
+}
+.align-stretch {
+    align-items:stretch;
+}
+
+/* navbar */
+.links {
+    height: 120px;
+    width:30%;
+}
+.link-zelda {
+    background-image: url('C:/Users/Chad/Desktop/Grand Circus/Personal_Website_Lab/modules/public/projects/images/Happy_Link.png');
+    height: 16px;
+    width: 16px;
+}
+.zelda-link-decorator {
+    shape-image-threshold: 1;
+    image-rendering: auto;
+    background-image: url('C:/Users/Chad/Desktop/Grand Circus/Personal_Website_Lab/modules/public/projects/images/Happy_Link.png');
+    height: 20px;
+    width:  20px;
+    
+}
+.link-container {
+    width: 100%;
+}
+.link {
+    /* box-shadow: 2px 4px var(--Dark-Purple);
+    background-color: var(--Grey); */
+    height: 20px;
+    width: 50%;
+}
+.box {
+    background-color: var(--Blue);
+    height: 6px;
+    width: 100%;
+}
+.navbar {
+    height: 120px;
+    width: 100%;
+    background-color: var(--Dark-Purple);
+}
+/* lists */
+.list-card dl {
+    font-size: 10px;
+}
+.list-card li {
+    background-color: var(--Dark-Purple);
+    min-width: 90%;
+    width: 90%;
+    margin-right: 20px;
+    list-style-image: url('/projects/images/link_sword.png');
+    font-size: 8px;
+}
+.list-card a {
+    cursor: url('/projects/images/link_sword.png'), auto;
+}
+.list-card {
+    min-height: 40%;
+
+    max-width: 40%;
+    min-width: 40%;
+}
+.human-resources {
+    align-self: end;
+    min-width: 80%;
+}
+/* footer */
+.footer-container {
+    margin-top: auto;
+    padding-top: 1%;
+    height: 80px;
+    min-width: 100%;
+    background-color: black;
+}
+.inner-footer {
+    height: 80px;
+    min-width:90%;
+    max-width:90%;
+    background-color: var(--Darker-Blue);
+}
+.footer {
+    height: 80px;
+    min-width:90%;
+    max-width:90%;
+    box-shadow: 2px 2px 2px black;
+    background-color: var(--Darker-Blue);
+}
+.footer-links a {
+    padding: 4px;
+    box-shadow: 2px 4px #0C0032;
+    background-color: var(--Grey);
+}
+/* containers */
+.head-shot {
+    height: 100px;
+    width: 100px;
+    box-shadow:2px 4px #0C0032 
+}
+.section {
+    height: 70vh;
+    background-color: var(--Dark-Purple);
+}
+.padding {
+    width: 40%;
+    height: 120px;
+}
+.container {
+    height: 120px;
+    /* background-color: var(--Grey); */
+}
+.container-10 {
+    /* background-color: var(--Grey); */
+    height: 120px;
+    width: 20%;
+}
+/* image section */
+.club-image {
+    width: 500px;
+    height: 100%;
+}
+.image-message-container {
+    display:inherit;
+    width: 90%;
+    height: 30%;
+    overflow:none;
+}
+.image-message {
+    padding: 3px;
+    overflow: scroll;
+    scroll-behavior: smooth;
+    min-width: 90%;
+    text-align: start;
+    font-size: 8px;
+    height:auto;
+}
+.image-message::-webkit-scrollbar {
+    display: none;
+}
+
+#bubs-image {
+    display:inherit;
+    width: auto;
+    max-width: 300px;
+    height: auto;
+    max-height: 300px;
+}
+.main-image-content {
+    position: static;
+    
+}
+.main-image-content:hover {
+    cursor: url('/projects/images/Happy_Link.png'), auto;
+}
+/* colors */
+.blue {
+    background-color: var(--Blue);
+}
+.darker-blue {
+    background-color: var(--Darker-Blue);
+}
+.dark-purple {
+    background-color: var(--Dark-Purple);
+}
+.light-purple {
+    background-color: var(--light-purple);
+}
+.grey {
+    background-color: var(--Grey);
+}
+.black {
+    background-color: black;
+}
+
+/* spacing */
+.no-overflow {
+    overflow:hidden;
+}
+.ml-10 {
+   margin-left: 10px; 
+}
+.mr-10 {
+    margin-right: 10px; 
+ }
+ .mb-10 {
+    margin-bottom: 10px;
+ }
+ .mt-10 {
+    margin-top: 10px;
+ }
+ .w-500 {
+    width: 500px;
+ }
+ .absolute-75 {
+    min-width: 75%;
+    max-width: 75%;
+ }
+ .absolute-height-50 {
+    max-height: 10vh;
+ }
+ .absolute-height-60 {
+    height: 60%;
+ }
+ .absolute-height {
+    height: 70%;
+    max-height: 70%;
+ }
+ 
+ .height-100 {
+    height: fit-content;
+ }
+ .width-60 {
+    width: 60%;
+ }
+ .width-40 {
+    width: 40%;
+ }
+ .m-10 {
+    margin:10px;
+ }
+ .p-10 {
+    padding:10px;
+ }
+ .p-b-10 {
+    padding-bottom:10px;
+ }
+ .height-max-35 {
+    max-height: 35%;
+ }
+ .width-max-35 {
+    max-width: 32%;
+ }
+ .width-max-75 {
+    max-width:75%;
+ }
+ .width-100 {
+    min-width: 100%;
+ }
+ /* borders */
+ .bdr {
+    border: 1px solid var(--White);
+    border-radius: 3px;
+ }
+ .text-start {
+    text-align: end;
+ }
+ .text-center {
+    text-align: center;
+ }
+ .text-light {
+    color:aliceblue;
+ }
+ .text-sm {
+    font-size:small;
+ }
+ .text-smaller {
+    font-size:8px;
+ }
+ .press-start {
+    font-family: 'Press Start 2P';
+ }
+ .a-style {
+    text-decoration: none;
+    text-decoration-style:none;
+ }
+ /* bubs */
+ .bubs-message-container{
+    width: 500px;
+    height: 100px;
+    font-size: 18px;
+    
+ }
+ .bubs-message {
+    padding: 4px;
+    box-shadow: 2px 4px #0C0032;
+    background-color: var(--Grey);
+ }
+ /* customcsssection */
+
+ .bdr-drk-purple {
+    border:solid 1px var(--Dark-Purple);
+ }
+ .bdr-purple {
+    border: solid 1px var(--light-purple);
+ }
+ .bdr-blue {
+    border: solid 1px var(--Blue);
+ }
+ .sqr-md {
+    width:60px;
+    height:60px;
+    
+ }
+ .sqr-lg {
+    width: 122px;
+    height: 122px;
+ }
+ .sqr-sm {
+    width: 30px;
+    height: 30px;
+ }
+ .rect-vert-lg {
+    height: 300px;
+    width: 100px;
+ }
+ .rect-hor-lg {
+    width: 300px;
+    height: 100px;
+ }
+ /* portfolio */
+ .iframe::-webkit-scrollbar {
+    display:none;
+ }
+ #project-section {
+    height: auto;
+    width: fit-content;
+    overflow: hidden
+ }
+ #bubs-section:hover {
+    cursor: url("/projects/images/bubs_treat.png"), auto;
+    
+ }
+ #about-me:hover {
+    cursor: url("/projects/images/zelda_book.png"), auto;
+    
+ }
+ #west-michigan-go-club:hover {
+    cursor: url("/projects/images/link_sword.png"), auto;
+ }
+ /* for javasript */
+ /* .label-effect */
