@@ -67,13 +67,17 @@ const imageMessageArray = [
     '',
     'This was where I wrote my first "Hello World!" app. The instructor, Dr. Chuck, covers the fundamentals of procedural programming while teaching python.\n\n I gained a basic understanding of iterable data structures, how and why they are used and how to apply them to manipulate, transform and synthesize data using algorithms.\n\n',
     'JavaScript is the third high-level programming language I learned after Python and then C#.\n\n This course was my first introduction to JavaScript and I can\'t recommend it enough to people who learn like me, by doing, try, fail, research, repeat.\n\n This course is comprehensive and the final projects, although fairly simple as far as software developement goes, are a good test for your ability to solve problems that in my experience are unique to javascript.',
-    'The quick brown fox jumped over the lazy dog',
-    'The quick brown fox jumped over the lazy dog',
-    'The quick brown fox jumped over the lazy dog',
-    'The quick brown fox jumped over the lazy dog',
-    'The quick brown fox jumped over the lazy dog',
+    
+    'This course covers the basics of html from the use of <div><div>to making your site ada compliant using alt and aria attributes.\n\n</div></div>  The main focus of the course is learning how to style your page using CSS. I learned the basics of html and CSS from this program.',
+    'This is Grant Chirpus.',
+    'This course covers the fundamentals of C# using what is described in the program as a procedural approach.\n\n This program provides many exercises writing basic algorithms using basic C# tools. This is where I wrote my first C# "hello world!"',
+    
+    'This course mainly focuses on OOP with C#. It\'s focus is on teaching the fundamental pillars of OOP using the C# language.\n\n It also covers some more advanced C# topics like interfaces and dependency injection.\n\n This course was my first real experience learning about OOP. Anything I had done before this with OOP was purely self taught by reading documentation and such...',
+    'This course was a little short and didn\'t cover very much unfortunately. It does briefly cover advanced C# topics like events and delegates. Things you don\'t seem to often use in web developement with C#.',
+    
     'This course is comprehensive to say the least. The instructor, Bruhgen Patel, takes you through all the steps from beginning to end creating a truly enterprise level website from creating the first project to deploying the complete solution to Microsoft Azure.\n\n The course covers a wide range of ASP .NET topics. The project uses Entity Framework Core with Microsoft SQL Server Management Studio, MVC using both manual Controllers and Views as well as scaffolding. Even using AJAX to pass data between Views and Controllers.\n\n The front end uses Razor views so as you go through the course you become familiar with razor syntax and ASP tag helpers. You also become familiar with using NewtonSoft.Json to serialize and deserialize JSON as the payment functionality of the site is outsourced to a third party API. There are lots of front end bells and whistles used such as JQuery, Bootstrap, Bootswatch and more to make the interface look slick while keeping focused on pure .NET related topics.\n\n Saying I got my moneys worth on this course is a massive understatement. My only complaint is that to complete this course honestly you need to deploy the project to Microsoft Azure which can end up costing money so I\'m told, so although I have completed 95% of this course I don\'t yet have the certificate but I have a link to my completed project from this course.',
-    'The quick brown fox jumped over the lazy dog',
+    'I haven\'t finished this course yet, what I\'ve done so far can be seen on my github... Above is an image of the project as it currently looks.',
+    
 ];
 const projectLinksArray = [
     '/projects/snek/snek.html',
@@ -117,6 +121,9 @@ const bubsMessageContainers = document.getElementsByClassName('label-effect');
 
 const aboutMeClickEvents = () => {
     for(let i = 0; i < aboutMeClickEventsArray.length; i++){
+        aboutMeClickEventsArray[i].addEventListener('mouseenter',()=>{
+            isBubs = true;
+        })
         aboutMeClickEventsArray[i].addEventListener('click', ()=> {
             console.log(aboutMeImageArray)
             aboutMeImage.href = aboutMeLinksArray[i];
@@ -128,29 +135,24 @@ const aboutMeClickEvents = () => {
 }
 
 const bubsSectionController = () => {
-
+    if(isBubs){
     let random = Math.floor(Math.random() * mrBubsArray.length -1);
     random = random < 0 ? 0 : random;
     bubsMessage.innerText = mrBubsMessages[timerTick];
     bubsImage.src = mrBubsArray[random];
     timerTick = timerTick === mrBubsMessages.length - 1 ? 0 : timerTick += 1;
+    }else{
+        console.log('hi')
+    }
 }
-
-let bubsInterval;
+let bubsInterval = setInterval(bubsSectionController, 2000);
+bubsInterval ;
 const loadLinks = () => {
     for(let i = 0; i < links.length;i++){
         console.log(linksArray[i])
         links[i].href = linksArray[i];
-        links[i].addEventListener('click',()=> {
-            if(links[i].innerText === "About"){
-                bubsInterval = setInterval(2000, bubsSectionController);
-            }else{
-                clearInterval(bubsInterval)
-            }
-        })
+        
         }
-
-        //links[i].classList.add("cursor: url('C:/Users/Chad/Desktop/Grand Circus/Personal_Website_Lab/projects/images/zelda_book.png')")
     }
     
 const formatListTitles = () => {
@@ -189,11 +191,6 @@ const projectsLinksOnClick = () => {
         console.log('all sorts of shit')
         projectLinks[i].addEventListener('click', ()=> {
             let iframe = document.getElementById('iframe');
-            // iframeElement.id = 'iframe';
-            // iframeElement.scrolling = 'no';
-            // iframeElement.width = '1000px';
-            // iframeElement.height = '100%';
-            // iframeElement.src = projectLinks[i].name;
             console.log(projectLinks[i].name);
             iframe.src = projectLinks[i].name;
             projectsLabel.innerText = projectLinks[i].innerText;
@@ -285,6 +282,7 @@ const bubsDisplayContainer = document.getElementById('bubs-display-container')
 console.log(badThings)
 const hoodRatStuff = document.getElementById('hood-rat-stuff')
 const badThingsController = () => {
+    
     badThings.addEventListener('mouseenter', (e)=> {
         console.log('hood rat stuff')
         bubsImage.classList.add('no-display');
@@ -331,12 +329,13 @@ const navController = () => {
     //     }
     // })
 }
+
 onClick();
 loadLinks();
 projectsLinksOnClick();
 aboutMeClickEvents();
 
-bubsInterval;
+
 
 
 
