@@ -8,6 +8,7 @@ const bubsSection = document.getElementById('bubs-section');
 const westMichiganGoClubSection = document.getElementById('west-michigan-go-club');
 const aboutMeImage = document.getElementById('about-me-image');
 const aboutMeLabel = document.getElementById('about-me-label');
+const footerContainer = document.getElementById('footer-container');
 const linksArray = [
     home,
     about,
@@ -110,6 +111,7 @@ const aboutMeClickEventsArray = [
 const projectLinks = document.getElementsByClassName('project-link');
 let iframe = document.getElementById('iframe');
 const projectSection = document.getElementById('project-section');
+const headerContacts = document.getElementById('to-footer')
 let projectsLabel = document.getElementById('projects-label');
 
 let gradientStartCount = 0;
@@ -119,6 +121,11 @@ let indexOnMouseLeave = -1;
 const bubsMessageContainer = document.getElementById('bubs-message-container');
 const bubsMessageContainers = document.getElementsByClassName('label-effect');
 
+const headerToFooter = () => {
+    headerContacts.addEventListener('click', (e)=> {
+        window.scrollTo(0, document.body.scrollHeight);
+    })
+}
 const aboutMeClickEvents = () => {
     for(let i = 0; i < aboutMeClickEventsArray.length; i++){
         aboutMeClickEventsArray[i].addEventListener('mouseenter',()=>{
@@ -329,7 +336,7 @@ const navController = () => {
     //     }
     // })
 }
-
+headerToFooter();
 onClick();
 loadLinks();
 projectsLinksOnClick();

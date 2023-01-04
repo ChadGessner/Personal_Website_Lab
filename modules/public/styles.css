@@ -133,10 +133,17 @@
     min-width: 100%;
     background-color: black;
 }
+.inner-footer {
+    height: 80px;
+    min-width:90%;
+    max-width:90%;
+    background-color: var(--Darker-Blue);
+}
 .footer {
     height: 80px;
     min-width:90%;
     max-width:90%;
+    box-shadow: 2px 2px 2px black;
     background-color: var(--Darker-Blue);
 }
 .footer-links a {
@@ -190,6 +197,7 @@
 .image-message::-webkit-scrollbar {
     display: none;
 }
+
 #bubs-image {
     display:inherit;
     width: auto;
@@ -257,6 +265,7 @@
     height: 70%;
     max-height: 70%;
  }
+ 
  .height-100 {
     height: fit-content;
  }
@@ -283,6 +292,9 @@
  }
  .width-max-75 {
     max-width:75%;
+ }
+ .width-100 {
+    min-width: 100%;
  }
  /* borders */
  .bdr {
