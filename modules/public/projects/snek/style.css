@@ -1,0 +1,38 @@
+.grid{
+    height: 440px;
+    width: 440px;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: blue;
+}
+
+.grid div {
+    height: 20px;
+    width: 20px;
+}
+
+.snek {
+    background-color: green;
+}
+
+.apple {
+    background-color: red;
+}
+
+.taken {
+    height: 20px;
+    width: 20px;
+    
+    background-color: yellow;
+}
+
+.taken .red {
+    background-color: red;
+}
+
+
+.currentposition {
+    height: 20px;
+    width: 20px;
+    background-color: green;
+}

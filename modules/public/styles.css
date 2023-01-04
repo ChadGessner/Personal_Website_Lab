@@ -69,14 +69,14 @@
     width:30%;
 }
 .link-zelda {
-    background-image: url('C:/Users/Chad/Desktop/Grand Circus/Personal_Website_Lab/projects/images/Happy_Link.png');
+    background-image: url('C:/Users/Chad/Desktop/Grand Circus/Personal_Website_Lab/modules/public/projects/images/Happy_Link.png');
     height: 16px;
     width: 16px;
 }
 .zelda-link-decorator {
     shape-image-threshold: 1;
     image-rendering: auto;
-    background-image: url('C:/Users/Chad/Desktop/Grand Circus/Personal_Website_Lab/projects/images/Happy_Link.png');
+    background-image: url('C:/Users/Chad/Desktop/Grand Circus/Personal_Website_Lab/modules/public/projects/images/Happy_Link.png');
     height: 20px;
     width:  20px;
     
@@ -109,11 +109,11 @@
     min-width: 90%;
     width: 90%;
     margin-right: 20px;
-    list-style-image: url('C:/Users/Chad/Desktop/Grand Circus/Personal_Website_Lab/projects/images/link_sword.png');
+    list-style-image: url('/projects/images/link_sword.png');
     font-size: 8px;
 }
 .list-card a {
-    cursor: url('C:/Users/Chad/Desktop/Grand Circus/Personal_Website_Lab/projects/images/link_sword.png'), auto;
+    cursor: url('/projects/images/link_sword.png'), auto;
 }
 .list-card {
     min-height: 40%;
@@ -202,7 +202,7 @@
     
 }
 .main-image-content:hover {
-    cursor: url('C:/Users/Chad/Desktop/Grand Circus/Personal_Website_Lab/projects/images/Happy_Link.png'), auto;
+    cursor: url('/public/projects/images/Happy_Link.png'), auto;
 }
 /* colors */
 .blue {
@@ -365,15 +365,15 @@
     overflow: hidden
  }
  #bubs-section:hover {
-    cursor: url("C:/Users/Chad/Desktop/Grand Circus/Personal_Website_Lab/projects/images/bubs_treat.png"), auto;
+    cursor: url("/projects/images/bubs_treat.png"), auto;
     
  }
  #about-me:hover {
-    cursor: url("C:/Users/Chad/Desktop/Grand Circus/Personal_Website_Lab/projects/images/zelda_book.png"), auto;
+    cursor: url("/projects/images/zelda_book.png"), auto;
     
  }
  #west-michigan-go-club:hover {
-    cursor: url("C:/Users/Chad/Desktop/Grand Circus/Personal_Website_Lab/projects/images/link_sword.png"), auto;
+    cursor: url("/projects/images/link_sword.png"), auto;
  }
  /* for javasript */
  /* .label-effect */
